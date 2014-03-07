@@ -1,0 +1,34 @@
+import random as r
+import easygui as e
+import time as t
+
+
+
+motivation=1
+d1="Yes sure!","No! Never!"
+scene=1
+chance="that was your only chance"
+a="False"
+Email="a"
+
+while scene==1 and motivation==1:
+    e.msgbox("""Welcome, this is my text-adventure about Mars one
+hope you enjoy it took a loooong time to code and design""")
+    playername=e.enterbox("Whats your name?")
+    e.msgbox("""good morning Austria. you wake up.In the living room you can hear the TV.
+They are talking about project Mars One. You stand up and go to the TV.Because you are very interested. """)
+    e.msgbox("""the woman continues:\"in exactly one year the project will start within that time people have the chance to qualify themselves for the desired places fora  special trainig at the ESA research center in French Guyana . it wont cost them anything but they wont ever be able to come back soif you are interrested contact:mars@1.com
+  \"""")
+    e.msgbox("""you think about joining that project...""")
+    e.buttonbox("Do you want to try to join the mission?","decision",d1)
+    if d1 =="Yes sure!":
+        a="You go to the PC"
+        scene+=1
+    elif d1 =="No! Never!":
+        print (chance)
+        motivation-=1
+        
+
+if scene == 2 and Email == "a":
+    e.msgbox("you sit down at the PC.But you cant remember the E-Mail")
+    Email=e.enterbox("Email of the recipiant
