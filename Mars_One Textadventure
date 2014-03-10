@@ -10,8 +10,7 @@ chance="that was your only chance"
 answer="False"
 
 for x in range (1,2):
-    e.msgbox("""Welcome, this is my text-adventure about Mars one
-hope you enjoy it took a loooong time to code and design""")
+    e.msgbox("""Welcome, this is my text-adventure about Mars one. hope you enjoy it""")
     playername=e.enterbox("Whats your name?")
     e.msgbox("""good morning Austria. you wake up.In the living room you can hear the TV.
 They are talking about project Mars One. You stand up and go to the TV.Because you are very interested. """)
