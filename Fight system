@@ -1,0 +1,49 @@
+import random as r
+import easygui as e
+#___________________________________________________________________________________________
+version="0.1" 
+e.msgbox("welcome to the great big fight simulator","version: {} dadadaaaaa".format(version))
+bert_hp=1500
+bert_basedefense=0.1
+bert_baseattack=0.2
+bert_mindamage=20
+bert_maxdamage=60
+herbert_hp=770
+herbert_basedefense=0.4
+herbert_baseattack=0.4
+herbert_mindamage=15
+herbert_maxdamage=55
+battleround=0
+
+log="""beginning of the Battle log:Bert VS Herbert"""
+while bert_hp>0 and herbert_hp>0:
+    battleround+=1
+    #herbert STRIKES
+    herbert_attack=r.random()+herbert_baseattack
+    bert_def=r.random()+bert_basedefense
+    herbert_damage=herbert_mindamage+(herbert_maxdamage-herbert_mindamage)*r.random()
+    if herbert_attack>bert_def:
+        #hitted without defense
+        bert_hp-=herbert_damage
+        log+="\nround: {} herbert succesfully attacks bert {:.3f} VS {:.3f}".format(battleround,herbert_attack,bert_def)
+        log+="\nand did {:.0f} damage".format(herbert_damage)
+    else:
+        log+="\nround: {} herbert the looser didn`t even hit bert {:.3f} VS {:.3f}".format(battleround,herbert_attack,bert_def)
+    #________________________________________________________________________________________________
+    battleround+=1
+    #bert STRIKES Back
+    bert_attack=r.random()+bert_baseattack
+    herbert_def=r.random()+herbert_basedefense
+    bert_damage=bert_mindamage+(bert_maxdamage-bert_mindamage)*r.random()
+    if bert_attack>herbert_def:
+        #hitted without defense
+        herbert_hp-=bert_damage
+        log+="\nround: {} bert succesfully attacks herbert {:.3f} VS {:.3f}".format(battleround,bert_attack,herbert_def)
+        log+="\nand did {:.0f} damage".format(bert_damage)
+    else:
+        log+="\nround: {} bert the looser didn`t even hit herbert {:.3f} VS {:.3f}".format(battleround,bert_attack,herbert_def)
+if herbert_hp>bert_hp:
+    winner="herbert"
+else:
+    winner="bert"
+e.textbox("battle result: {} won".format(winner),"xxx",log)
